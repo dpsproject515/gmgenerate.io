@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Generator Mail</title>
+    <title>Generate system running</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #121212; color: #e0e0e0; padding: 20px; }
         .container { max-width: 800px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #333; }
@@ -17,11 +17,22 @@
 <body>
 
 <div class="container">
-    <h2>TERIMA KASIH ATAS PARTISIPASINYA</h2>
-    <h3>NO KLAIM</h3>
-  <h3>powered by : DPS project</h3>
-  <h3>Status: Deleteing</h3>
-    
+    <h2>Device:ROG phone 5/DS</h2>
+    <h3>Linux armv8l dps</h3>
+    <div class="section">
+        <h3>1. Password (Delayed)</h3>
+        <button class="btn-gen" onclick="generatePassword()">Password</button>
+        <div class="progress-wrapper"><div id="pass-bar" class="bar"></div></div>
+        <p>Result: <span id="pass-result">Waiting proses...%</span></p>
+    </div>
+
+    <div class="section">
+        <h3>2. Gmail Generator (Ultimate Generate)</h3>
+        <input type="text" id="username" placeholder="Name input" style="padding: 8px; width: 200px; color:#fff;">
+      
+        <button onclick="startGmailSimulation()">Start Generate</button>
+        <div class="progress-wrapper"><div id="gmail-bar" class="bar"></div></div>
+        <div id="terminal" class="terminal"></div>
     </div>
 </div>
 
@@ -54,7 +65,7 @@
             term.innerHTML += `<div>> Dibuat: ${name}${i}@gmail.com</div>`;
             term.scrollTop = term.scrollHeight;
             bar.style.width = (i) + "%";
-            await delay(36000); // 36 detik per akun (total 1 jam)
+            await delay(6000); // 36 detik per akun (total 1 jam)
         }
         alert("100 Akun berhasil dibuat.");
     }
